@@ -1,3 +1,15 @@
+@font-face {
+  font-family: Schwifty;
+  src: url('../public/fonts/get_schwifty.ttf');
+}
+
 body {
   background-color: #30306C;
+}
+
+h1 {
+  font-family: 'Schwifty', serif;
+  color: #B1D526;
+  text-align: center;
+  font-size: 35px;
 }
