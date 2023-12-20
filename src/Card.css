@@ -1,27 +1,47 @@
 .cards-container {
     display: grid;
-    grid-template-columns: repeat(5, 1fr); /* 5 columns */
-    grid-template-rows: repeat(4, 1fr); /* 4 rows */
-    gap: 10px; /* Adjust the gap between cards */
+    grid-template-columns: repeat(5, minmax(auto, 200px)); /* 5 columns */
+    grid-template-rows: repeat(4, minmax(auto, 250px)); /* 4 rows */
+    row-gap: 0px;
+    column-gap: 0px;
+    /* align-items: start; */
+    justify-items: center;
+    justify-content: center;
 }
 
 .card {
     background-color: #42BAC4;
+    box-shadow: 1px 1px 10px #B1D526;
     border-radius: 4px;
     text-align: center;
-    max-width: fit-content;
-    padding: none;
-    width: 200px;
-    height: auto;
+    max-width: 400px;
+    max-height: 230px;
+    width: 150px;
+    height: 230px;
 }
 
 .card img {
     border-radius: 4px;
-    width: 100%;
+    width: 90%;
     height: auto;
     object-fit: cover;
+    margin-top: 5px;
 }
 
 h2 {
     padding: 0;
+    margin: 0;
 }
+
+.card:hover {
+    box-shadow: 1px 1px 10px whitesmoke;
+}
+
+@media (max-width: 600px) {
+    .cards-container {
+      grid-template-columns: repeat(2, 1fr);
+      align-items: start;
+      row-gap: 0px;
+      column-gap: 0px;
+    }
+  }
