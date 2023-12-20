@@ -13,10 +13,13 @@ export default function App() {
   }, []);
 
   return (
-    <div className="cards-container">
-      {characters.map(character => (
-        <Card key={character.id} character={character} />
-      ))}
-    </div>
+    <>
+      <h1>MEMORY GAME</h1>
+      <div className="cards-container">
+        {characters.map((character) => (
+          <Card key={character.id} character={character} />
+        ))}
+      </div>
+    </>
   );
 }
