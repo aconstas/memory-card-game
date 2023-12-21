@@ -1,9 +1,9 @@
 import propTypes from "prop-types";
 import "../Card.css";
 
-export default function Card({ character }) {
+export default function Card({ character, handleCardClick }) {
   return (
-    <div className="card">
+    <div className="card" onClick={handleCardClick}>
       <img src={character.image} alt={character.name} />
       <h2>{character.name}</h2>
     </div>
@@ -12,6 +12,7 @@ export default function Card({ character }) {
 
 Card.propTypes = {
   character: propTypes.object,
+  handleCardClick: propTypes.func,
 };
 
 // Will the card images ever change? No.
