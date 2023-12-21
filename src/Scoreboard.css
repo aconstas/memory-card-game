@@ -1,0 +1,9 @@
+#scoreboard {
+    display: block;
+    position: absolute;
+    text-align: end;
+    align-items: start;
+    right: 20vw;
+    top: 0;
+    color: #9dbd1d;
+}
