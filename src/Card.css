@@ -35,6 +35,7 @@ h2 {
 
 .card:hover {
     box-shadow: 1px 1px 10px whitesmoke;
+    cursor: pointer;
 }
 
 @media (max-width: 600px) {
