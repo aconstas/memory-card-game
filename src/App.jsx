@@ -3,11 +3,13 @@ import "./Card.css";
 import { useState, useEffect } from "react";
 import Card from "./components/Card";
 import Scoreboard from "./components/Scoreboard";
+import Modal from "./components/Modal";
 
 export default function App() {
   const [characters, setCharacters] = useState([]);
   const [selectedCharacters, setSelectedCharacters] = useState([]);
   const [bestScore, setBestScore] = useState(0);
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   useEffect(() => {
     fetch("https://rickandmortyapi.com/api/character")
@@ -18,11 +20,11 @@ export default function App() {
   console.log(selectedCharacters);
 
   function handleCardClick(character) {
-    setSelectedCharacters([...selectedCharacters, character.name]);
     if (isCardAlreadyClicked(character)) {
       updateBestScore();
-      return alert("You lost!");
+      endGame();
     } else {
+      setSelectedCharacters([...selectedCharacters, character.name]);
       shuffleCards();
     }
   }
@@ -50,10 +52,25 @@ export default function App() {
     }
   }
 
+  function endGame() {
+    openModal();
+  }
+  
+  function openModal() {
+    setIsModalOpen(true);
+  }
+  
+  function closeModal() {
+    setIsModalOpen(false);
+    setSelectedCharacters([]);
+    shuffleCards();
+  }
+
   return (
     <>
       <h1>MEMORY GAME</h1>
       <Scoreboard score={selectedCharacters.length} bestScore={bestScore} />
+      {isModalOpen && <Modal onClose={closeModal} score={selectedCharacters.length}/>}
       <div className="cards-container">
         {characters.map((character) => (
           <Card
