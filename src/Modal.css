@@ -1,0 +1,34 @@
+.modal-backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .modal-content {
+    position: relative;
+    background-color: white;
+    padding: 20px;
+    border-radius: 5px;
+    max-width: 50vw;
+    min-height: 45vh;
+    max-height: 50vh;
+    font-size: 25px;
+  }
+  
+  #score {
+    text-align: center;
+    font-family: "Schwifty", sans-serif;
+  }
+
+  #close-modal {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    width: 70px;
+  }
